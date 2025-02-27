@@ -1,18 +1,18 @@
-name: Playwright Tests
+name: Run Playwright Automated Tests
 
 on: [push, pull_request]
 
 jobs:
-  login-signup-test:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: lts/*
 
       - name: Install dependencies
         run: npm install
@@ -22,3 +22,9 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test login.spec.ts --project chromium
+
+      - name: Upload Test Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-reports
+          path: test-results/
