@@ -27,7 +27,7 @@ test.describe('Signup page Tests', () => {
 
 		await page.locator('select[aria-label="I specialize on"]').selectOption({ label: 'Bangles' });
 		await page.locator('select[aria-label="I am a"]').selectOption({ label: 'jeweler' });
-		await page.fill('input[placeholder="ABN/Tax Number"]', '50 824 753 556');
+		await page.fill('input[placeholder="ABN/Tax Number"]', '123 824 753 556');
 		await page.locator('select[aria-label="Country"]').selectOption({ label: 'Australia' });
 		await page.locator('select[aria-label="State/Province"]').selectOption({ label: 'New South Wales' });
 		await page.fill('input[placeholder="Unit No./Steet Name"]', 'J. Smith Street');
