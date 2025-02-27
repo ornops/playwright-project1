@@ -23,8 +23,4 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test login.spec.ts --project chromium
 
-      - name: Upload Test Reports
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-reports
-          path: test-results/
+
